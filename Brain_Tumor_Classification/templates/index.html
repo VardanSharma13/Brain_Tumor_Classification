@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="file"] {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #result {
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brain Tumor MRI Classification</h1>
+    <p>Upload an MRI image to classify the type of tumor.</p>
+
+    <!-- Form to upload the MRI image -->
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload MRI Image:</label>
+        <input type="file" name="file" accept="image/*" required><br><br>
+        <button type="submit">Classify</button>
+    </form>
+</body>
+</html>

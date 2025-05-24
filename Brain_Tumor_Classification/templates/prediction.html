@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        #result {
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        .treatment {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .treatment ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .treatment li {
+            margin-bottom: 10px;
+        }
+        a {
+            font-size: 16px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>The predicted class is: <strong>{{ prediction }}</strong></p>
+    
+    <div class="treatment">
+        <h3>Description:</h3>
+        <p>{{ description }}</p>
+
+        <h3>Possible Treatments:</h3>
+        <ul>
+            {% for option in treatment %}
+                <li>{{ option }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>
